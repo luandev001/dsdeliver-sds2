@@ -1,16 +1,21 @@
-import { types } from "util";
-
 export type Product = {
     id: number;
     name: string;
     price: number;
     description: string;
     imageUri: string;
- 
-}
+ }
 
-export type OrderLocationdata = {
+export type OrderLocationData = {
     address: string;
     latitude: number;
     longitude: number;
 }
+
+type ProductId = {
+    id: number;
+}
+
+export type OrderPayload = {
+    product: ProductId[];
+} & OrderLocationData;
